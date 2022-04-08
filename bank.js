@@ -1,8 +1,8 @@
 // k => bir seferlik para çekme limiti (number),
 // amounts => müşterilerin ilk sıralamasına göre oluşturulan hesap bakiyeleri (array)
 
-let k = -1;
-let amounts = [3, 50, 5, 1, 100];
+let k = 2;
+let amounts = [3, 5, 41, 7, 1, 100];
 
 function getFinalOrder(k, amounts) {
   let lastOrder = [];
@@ -27,9 +27,8 @@ function getFinalOrder(k, amounts) {
       amountsObject[index].amount -= k;
       amountsObject.push(amountsObject[index]);
       amountsObject.splice(index, 1);
-    }
+    }    
   }
-
   //console.log("SON SATIRDA AMOUNTS OBJECT:", amountsObject);
   //console.log("SON SATIRDA LAST ORDER:", lastOrder);
   return lastOrder
